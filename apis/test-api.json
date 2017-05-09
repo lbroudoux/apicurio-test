@@ -1,0 +1,7 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Test API",
+        "description": "Description for Test API using Apicurio Studio"
+    }
+}
