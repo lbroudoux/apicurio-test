@@ -3,5 +3,57 @@
     "info": {
         "title": "Test API",
         "description": "Description for Test API using Apicurio Studio"
+    },
+    "paths": {
+        "/order": {
+            "get": {},
+            "post": {}
+        },
+        "/order/{id}": {
+            "get": {},
+            "delete": {},
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "Item": {
+            "properties": {
+                "id": {},
+                "label": {}
+            }
+        },
+        "LineItem": {
+            "properties": {
+                "price": {},
+                "quantity": {},
+                "item": {
+                    "$ref": "#/definitions/Item"
+                }
+            }
+        },
+        "Order": {
+            "properties": {
+                "id": {},
+                "amount": {
+                    "type": "number"
+                },
+                "devise": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "#/definitions/LineItem"
+                    }
+                },
+                "status": {}
+            }
+        }
     }
 }
