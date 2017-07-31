@@ -7,18 +7,70 @@
   "paths": {
     "/order": {
       "get": {
-        "description": "Retrieve a list of orders"
+        "description": "Retrieve a list of orders",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "name": "page",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of orders was found",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "#/definitions/Order"
+              }
+            }
+          }
+        }
       },
       "post": {
-        "description": "Create (place) a new order"
+        "description": "Create (place) a new order",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The order to create",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Order was correctly created",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        }
       }
     },
     "/order/{id}": {
       "get": {
-        "description": "Retrieve an existing order using its id"
+        "description": "Retrieve an existing order using its id",
+        "responses": {
+          "200": {
+            "description": "Order was found and is in response",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        }
       },
       "delete": {
-        "description": "Delete an existing order using its id"
+        "description": "Delete an existing order using its id",
+        "responses": {
+          "204": {
+            "description": "Order was correctly removed"
+          }
+        }
       },
       "parameters": [
         {
