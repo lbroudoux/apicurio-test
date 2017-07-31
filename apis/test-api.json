@@ -2,7 +2,17 @@
   "swagger": "2.0",
   "info": {
     "title": "Test API",
-    "description": "Description for Test API using Apicurio Studio"
+    "description": "Description for Test API using Apicurio Studio",
+    "contact": {
+      "name": "Laurent Broudoux",
+      "url": "http://www.github.com/lbroudoux",
+      "email": "laurent.broudoux@gmail.com"
+    },
+    "license": {
+      "name": "GNU GPLv3",
+      "url": "https://www.gnu.org/licenses/gpl.txt"
+    },
+    "version": "0.0.1"
   },
   "paths": {
     "/order": {
@@ -11,11 +21,13 @@
         "parameters": [
           {
             "name": "status",
-            "in": "query"
+            "in": "query",
+            "type": "string"
           },
           {
             "name": "page",
-            "in": "query"
+            "in": "query",
+            "type": "integer"
           }
         ],
         "responses": {
@@ -76,22 +88,44 @@
         {
           "name": "id",
           "in": "path",
+          "required": true,
           "type": "string"
         }
       ]
     }
   },
+  "tags": [
+    {
+      "name": "test",
+      "description": ""
+    },
+    {
+      "name": "order",
+      "description": ""
+    }
+  ],
   "definitions": {
     "Item": {
       "properties": {
-        "id": {},
-        "label": {}
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        }
       }
     },
     "LineItem": {
       "properties": {
-        "price": {},
-        "quantity": {},
+        "price": {
+          "type": "number"
+        },
+        "quantity": {
+          "type": "integer"
+        },
         "item": {
           "$ref": "#/definitions/Item"
         }
@@ -99,7 +133,9 @@
     },
     "Order": {
       "properties": {
-        "id": {},
+        "id": {
+          "type": "string"
+        },
         "amount": {
           "type": "number"
         },
@@ -112,7 +148,9 @@
             "type": "#/definitions/LineItem"
           }
         },
-        "status": {}
+        "status": {
+          "type": "string"
+        }
       }
     }
   }
