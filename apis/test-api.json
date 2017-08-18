@@ -68,7 +68,7 @@
     },
     "/order/{id}": {
       "get": {
-        "summary": "Retrieve and existing order using its is",
+        "summary": "Retrieve and existing order using its id",
         "description": "Retrieve an existing order using its id",
         "responses": {
           "200": {
