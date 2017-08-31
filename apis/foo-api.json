@@ -1,1 +1,36 @@
-{"swagger":"2.0","info":{"title":"Foo API","description":"","version":"1.0.0"}}
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Foo API",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/foo": {
+      "get": {
+        "summary": "Retrieve {foo} resources",
+        "description": "Retrieve a bunch of {foo} resources. Specifiy exemple resource as body payload.",
+        "responses": {
+          "200": {
+            "description": "Get an array of {foo} resources"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create new {foo} resource",
+        "description": "Create a new {foo} resource. Specify payload within request body.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Get the newly created {foo} resource."
+          }
+        }
+      }
+    }
+  }
+}
