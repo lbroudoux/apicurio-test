@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Foo API",
-    "description": "This is a generic API definition for manipulation of {foo} resources.",
+    "description": "This is a generic API definition for manipulation of {foo} resources. It contains basic CRUD operations for {foo} resources.",
     "version": "1.0.0"
   },
   "paths": {
