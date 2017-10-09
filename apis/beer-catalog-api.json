@@ -85,18 +85,6 @@
     {
       "name": "beer",
       "description": ""
-    },
-    {
-      "name": "catalog",
-      "description": ""
-    },
-    {
-      "name": "demonstration",
-      "description": ""
-    },
-    {
-      "name": "red hat",
-      "description": ""
     }
   ],
   "definitions": {
