@@ -15,25 +15,11 @@
     "version": "0.9"
   },
   "paths": {
-    "/beer": {
-      "get": {
-        "summary": "List beers within catalog",
-        "description": "List beers within catalog",
-        "responses": {
-          "200": {
-            "description": "Array of beers",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "#/definitions/Beer"
-              }
-            }
-          }
-        }
-      }
-    },
     "/beer/{name}": {
       "get": {
+        "tags": [
+          "beer"
+        ],
         "summary": "Get beer having name",
         "description": "Get beer having name",
         "responses": {
@@ -57,6 +43,9 @@
     },
     "/beer/findByStatus/{status}": {
       "get": {
+        "tags": [
+          "beer"
+        ],
         "summary": "Get beers having status",
         "description": "Get beers having status",
         "responses": {
@@ -65,7 +54,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "#/definitions/Beer"
+                "$ref": "#/definitions/Beer"
               }
             }
           }
@@ -75,8 +64,40 @@
         {
           "name": "status",
           "in": "path",
+          "description": "Status of beers to retrieve",
           "required": true,
           "type": "string"
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "description": "Number of page to retrieve",
+          "type": "number"
+        }
+      ]
+    },
+    "/beer": {
+      "get": {
+        "summary": "List beers within catalog",
+        "description": "List beers within catalog",
+        "responses": {
+          "200": {
+            "description": "Array of beers",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Beer"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "page",
+          "in": "query",
+          "description": "Number of page to retrieve",
+          "type": "number"
         }
       ]
     }
@@ -84,7 +105,7 @@
   "tags": [
     {
       "name": "beer",
-      "description": ""
+      "description": "Beer resource"
     }
   ],
   "definitions": {
