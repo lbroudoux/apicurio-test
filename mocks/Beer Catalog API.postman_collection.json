@@ -13,9 +13,34 @@
 			"item": [
 				{
 					"name": "Get beer having name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var expectedName = globals[\"name\"];",
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"var schema = {",
+									" \"type\": \"object\",",
+									" \"properties\": {",
+									"    \"name\": { \"type\": \"string\", \"enum\": [expectedName] },",
+									"    \"country\": { \"type\": \"string\" },",
+									"    \"type\": { \"type\": \"string\" },",
+									"    \"rating\": { \"type\": \"number\" },",
+									"    \"status\": { \"type\": \"string\" }",
+									"  }",
+									"};",
+									"",
+									"tests[\"Valid name in response\"] = tv4.validate(jsonData, schema);"
+								]
+							}
+						}
+					],
 					"request": {
 						"url": {
-							"raw": "http:///beer/:name?page={{page}}",
+							"raw": "http:///beer/:name",
 							"host": [
 								"http:"
 							],
@@ -26,14 +51,7 @@
 								"beer",
 								":name"
 							],
-							"query": [
-								{
-									"key": "page",
-									"value": "{{page}}",
-									"equals": true,
-									"description": ""
-								}
-							],
+							"query": [],
 							"variable": [
 								{
 									"description": "",
@@ -49,7 +67,7 @@
 					},
 					"response": [
 						{
-							"id": "4b3627ef-0a94-462d-939d-9469ba72d464",
+							"id": "809e4ade-2462-454b-b8de-880f520e8c79",
 							"name": "Rodenbach",
 							"originalRequest": {
 								"url": {
@@ -87,7 +105,7 @@
 							"body": "{\"name\": \"Rodenbach\", \"country\": \"Belgium\", \"type\": \"Brown ale\", \"rating\": 4.2, \"status\": \"available\"}"
 						},
 						{
-							"id": "e6ece879-66a0-414e-a488-562428e8329d",
+							"id": "b205add4-5386-4c79-a38c-61cd75a94435",
 							"name": "Weissbier",
 							"originalRequest": {
 								"url": {
@@ -185,7 +203,7 @@
 					},
 					"response": [
 						{
-							"id": "db6d0486-94b5-4dae-aad3-59317c84e66b",
+							"id": "2cef0eba-abe8-468e-8dc9-0731f5758b52",
 							"name": "Get available beers",
 							"originalRequest": {
 								"url": {
@@ -224,7 +242,7 @@
 							"body": "[{\"name\": \"Rodenbach\", \"country\": \"Belgium\", \"type\": \"Brown ale\", \"rating\": 4.2, \"status\": \"available\"},\n{\"name\": \"Westmalle Triple\", \"country\": \"Belgium\", \"type\": \"Trappist\", \"rating\": 3.8, \"status\": \"available\"}]"
 						},
 						{
-							"id": "a080bd50-58a9-4889-9e3a-50d43fbc66f4",
+							"id": "5b0ccc56-539d-428c-8334-d641a900b60e",
 							"name": "Get out_of_stock beers",
 							"originalRequest": {
 								"url": {
@@ -266,6 +284,17 @@
 				},
 				{
 					"name": "List beers within catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is OK\"] = (responseCode.code === 200 || responseCode.code === 404);"
+								]
+							}
+						}
+					],
 					"request": {
 						"url": {
 							"raw": "http:///beer?page={{page}}",
@@ -295,7 +324,7 @@
 					},
 					"response": [
 						{
-							"id": "5817dcf5-c03a-44ec-8473-93aed7117977",
+							"id": "6941bfe0-0e27-4ee6-a244-f03dfca6fe25",
 							"name": "List page 0",
 							"originalRequest": {
 								"url": {
