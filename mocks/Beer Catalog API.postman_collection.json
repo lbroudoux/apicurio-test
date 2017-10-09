@@ -49,7 +49,7 @@
 					},
 					"response": [
 						{
-							"id": "8b951e1e-9e51-4ba3-bed4-63c78abd6333",
+							"id": "4b3627ef-0a94-462d-939d-9469ba72d464",
 							"name": "Rodenbach",
 							"originalRequest": {
 								"url": {
@@ -87,7 +87,7 @@
 							"body": "{\"name\": \"Rodenbach\", \"country\": \"Belgium\", \"type\": \"Brown ale\", \"rating\": 4.2, \"status\": \"available\"}"
 						},
 						{
-							"id": "3cc5b2ce-594e-4603-b8d9-2ebc4f422871",
+							"id": "e6ece879-66a0-414e-a488-562428e8329d",
 							"name": "Weissbier",
 							"originalRequest": {
 								"url": {
@@ -125,7 +125,7 @@
 							"body": "{\n    \"name\": \"Weissbier\",\n    \"country\": \"Germany\",\n    \"type\": \"Wheat\",\n    \"rating\": 4.1,\n    \"status\": \"out_of_stock\"\n}"
 						},
 						{
-							"id": "46423bbf-7090-4219-bb0c-032f1875b7b2",
+							"id": "cc80a576-7002-4ba3-837c-bc7f7897228e",
 							"name": "List page 1",
 							"originalRequest": {
 								"url": {
@@ -223,7 +223,7 @@
 					},
 					"response": [
 						{
-							"id": "eb6ce3e9-980d-4bf8-972a-0e4a9df092d4",
+							"id": "db6d0486-94b5-4dae-aad3-59317c84e66b",
 							"name": "Get available beers",
 							"originalRequest": {
 								"url": {
@@ -262,7 +262,7 @@
 							"body": "[{\"name\": \"Rodenbach\", \"country\": \"Belgium\", \"type\": \"Brown ale\", \"rating\": 4.2, \"status\": \"available\"},\n{\"name\": \"Westmalle Triple\", \"country\": \"Belgium\", \"type\": \"Trappist\", \"rating\": 3.8, \"status\": \"available\"}]"
 						},
 						{
-							"id": "548efb65-1906-4ae3-8bb4-4b767504ef9f",
+							"id": "a080bd50-58a9-4889-9e3a-50d43fbc66f4",
 							"name": "Get out_of_stock beers",
 							"originalRequest": {
 								"url": {
@@ -305,7 +305,27 @@
 				{
 					"name": "List beers within catalog",
 					"request": {
-						"url": "http:///beer",
+						"url": {
+							"raw": "http:///beer?page={{page}}",
+							"host": [
+								"http:"
+							],
+							"port": "",
+							"path": [
+								"",
+								"",
+								"beer"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "{{page}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -313,7 +333,7 @@
 					},
 					"response": [
 						{
-							"id": "b316038d-75ef-4e1e-a88a-5494e09ac77f",
+							"id": "5817dcf5-c03a-44ec-8473-93aed7117977",
 							"name": "List page 0",
 							"originalRequest": {
 								"url": {
@@ -348,25 +368,7 @@
 							"header": [],
 							"cookie": [],
 							"responseTime": 0,
-							"body": "[\n    {\n        \"name\": \"Rodenbach\",\n        \"country\": \"Belgium\",\n        \"type\": \"Brown ale\",\n        \"rating\": 4.2,\n        \"status\": \"available\"\n    },\n    {\n        \"name\": \"Westmalle Triple\",\n        \"country\": \"Belgium\",\n        \"type\": \"Trappist\",\n        \"rating\": 3.8,\n        \"status\": \"available\"\n    },\n    {\"name\": \"Weissbier\", \"country\": \"Germany\", \"type\": \"Wheat\", \"rating\": 4.1, \"status\": \"out_of_stock\"}\n]"
-						},
-						{
-							"id": "eb0b3b26-a810-41d5-ac66-c88312b37df5",
-							"name": "List page 1",
-							"originalRequest": {
-								"url": "http:///beer",
-								"method": "GET",
-								"header": [],
-								"body": {}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "",
-							"_postman_previewtype": "parsed",
-							"header": [],
-							"cookie": [],
-							"responseTime": 0,
-							"body": ""
+							"body": "[\n    {\n        \"name\": \"Rodenbach\",\n        \"country\": \"Belgium\",\n        \"type\": \"Brown ale\",\n        \"rating\": 4.2,\n        \"status\": \"available\"\n    },\n    {\n        \"name\": \"Westmalle Triple\",\n        \"country\": \"Belgium\",\n        \"type\": \"Trappist\",\n        \"rating\": 3.8,\n        \"status\": \"available\"\n    },\n    {\n        \"name\": \"Weissbier\",\n        \"country\": \"Germany\",\n        \"type\": \"Wheat\",\n        \"rating\": 4.1,\n        \"status\": \"out_of_stock\"\n    }\n]"
 						}
 					]
 				}
