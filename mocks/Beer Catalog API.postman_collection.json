@@ -123,44 +123,6 @@
 							"cookie": [],
 							"responseTime": 0,
 							"body": "{\n    \"name\": \"Weissbier\",\n    \"country\": \"Germany\",\n    \"type\": \"Wheat\",\n    \"rating\": 4.1,\n    \"status\": \"out_of_stock\"\n}"
-						},
-						{
-							"id": "cc80a576-7002-4ba3-837c-bc7f7897228e",
-							"name": "List page 1",
-							"originalRequest": {
-								"url": {
-									"raw": "http:///beer?page=1",
-									"host": [
-										"http:"
-									],
-									"port": "",
-									"path": [
-										"",
-										"",
-										"beer"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1",
-											"equals": true,
-											"description": ""
-										}
-									],
-									"variable": []
-								},
-								"method": "GET",
-								"header": [],
-								"body": {}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "",
-							"_postman_previewtype": "parsed",
-							"header": [],
-							"cookie": [],
-							"responseTime": 0,
-							"body": ""
 						}
 					]
 				},
