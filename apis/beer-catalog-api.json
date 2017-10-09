@@ -78,6 +78,9 @@
     },
     "/beer": {
       "get": {
+        "tags": [
+          "beer"
+        ],
         "summary": "List beers within catalog",
         "description": "List beers within catalog",
         "responses": {
