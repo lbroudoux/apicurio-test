@@ -67,6 +67,33 @@ paths:
       description: Owner of the cars
       required: true
       schema:
+        format: string
+        type: string
+      examples:
+        laurent:
+          summary: Value for laurent related examples
+          value: laurent
+  /owner/{owner}/car/{car}/passenger:
+    post:
+      summary: Add some passengers to the car
+      description: Add some passengers to the car description
+      operationId: addPassengerOp
+      responses:
+        200:
+          content:
+            application/json: {}
+    parameters:
+    - name: owner
+      in: path
+      description: Owner of the car
+      required: true
+      schema:
+        type: string
+    - name: car
+      in: path
+      description: The car to manage passengers for
+      required: true
+      schema:
         type: string
 components:
   schemas:
