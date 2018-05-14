@@ -17,6 +17,19 @@ paths:
       summary: List all cats of owner
       description: List all cars of owner description
       operationId: getCarsOp
+      parameters:
+      - name: page
+        in: query
+        description: Result page wanted
+        required: false
+        schema:
+          type: integer
+      - name: limit
+        in: query
+        description: Number of result in page
+        required: false
+        schema:
+          type: integer
       responses:
         200:
           description: Success
