@@ -47,12 +47,7 @@
 							"variable": []
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "x-fapi-financial-id",
-								"value": "123456789"
-							}
-						],
+						"header": [],
 						"body": {},
 						"description": "List beers within catalog"
 					},
@@ -83,7 +78,12 @@
 									"variable": []
 								},
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "x-fapi-financial-id",
+										"value": "123456789"
+									}
+								],
 								"body": {}
 							},
 							"status": "OK",
