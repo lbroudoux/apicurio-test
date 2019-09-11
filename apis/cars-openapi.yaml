@@ -83,9 +83,11 @@ paths:
         format: string
         type: string
       examples:
-        laurent:
+        laurent_cars:
           summary: Value for laurent related examples
           value: laurent
+        laurent_307:
+          $ref: '#/components/examples/param_laurent'
   /owner/{owner}/car/{car}/passenger:
     post:
       summary: Add some passengers to the car
@@ -123,6 +125,9 @@ components:
         model:
           description: Model of the car
           type: string
+  examples:
+    param_laurent:
+      value: laurent
 tags:
 - name: car
   description:
