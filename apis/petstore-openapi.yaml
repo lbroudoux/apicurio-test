@@ -159,6 +159,13 @@ paths:
                 $ref: '#/components/schemas/Error'
           description: unexpected error
         204:
+          content:
+            application/json:
+              schema:
+                type: string
+              examples:
+                zaza:
+                  value: ' '
           description: pet deleted
       operationId: deletePet
       description: deletes a single pet based on the ID supplied
